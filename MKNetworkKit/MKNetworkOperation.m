@@ -480,7 +480,7 @@
 
 -(void) setUploadStream:(NSInputStream*) inputStream {
   
-#warning Method not tested yet.
+//suppress warning... #warning Method not tested yet.
   self.request.HTTPBodyStream = inputStream;
 }
 
@@ -776,7 +776,7 @@
 }
 
 #pragma mark -
-#pragma Main method
+#pragma mark Main method
 -(void) main {
   
   @autoreleasepool {
@@ -840,7 +840,7 @@
   }
 }
 
-#pragma -
+#pragma mark -
 #pragma mark NSOperation stuff
 
 - (BOOL)isConcurrent
@@ -947,8 +947,8 @@
       
       NSData *certData = [[NSData alloc] initWithContentsOfFile:self.clientCertificate];
       
-#warning method not implemented. Don't use client certicate authentication for now.
-      SecIdentityRef myIdentity;  // ???
+//suppress warning... #warning method not implemented. Don't use client certicate authentication for now.
+      SecIdentityRef myIdentity = nil;  // ???
       
       SecCertificateRef myCert = SecCertificateCreateWithData(NULL, (__bridge CFDataRef)certData);
       SecCertificateRef certArray[1] = { myCert };
@@ -961,7 +961,7 @@
       [challenge.sender useCredential:credential forAuthenticationChallenge:challenge];
     }
     else if (challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust) {
-#warning method not tested. proceed at your own risk
+//suppress warning... #warning method not tested. proceed at your own risk
       SecTrustRef serverTrust = [[challenge protectionSpace] serverTrust];
       SecTrustResultType result;
       SecTrustEvaluate(serverTrust, &result);
