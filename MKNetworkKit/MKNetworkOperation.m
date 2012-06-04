@@ -664,8 +664,6 @@
 
 -(void) addData:(NSData*) data forKey:(NSString*) key mimeType:(NSString*) mimeType {
   
-  [self.request setHTTPMethod:@"POST"];
-  
   NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                         data, @"data",
                         key, @"name",
@@ -681,8 +679,6 @@
 }
 
 -(void) addFile:(NSString*) filePath forKey:(NSString*) key mimeType:(NSString*) mimeType {
-  
-  [self.request setHTTPMethod:@"POST"];
   
   NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
                         filePath, @"filepath",
